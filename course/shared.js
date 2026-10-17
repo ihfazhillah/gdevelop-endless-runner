@@ -216,6 +216,58 @@
     topbar.style.width = pct + '%';
   });
 })();
+
+/* === Tonton Video Asli (YouTube) per module ===
+   Tombol .yt-watch membuka modal iframe YouTube (ID bMkMLtvsGtA) pada detik start
+   yang akurat dari transcript. Tutup: klik luar / tombol ✕ / ESC (stop playback). */
+(function () {
+  var YT_ID = 'bMkMLtvsGtA';
+  var modal = null;
+  function buildModal() {
+    var m = document.createElement('div');
+    m.id = 'yt-watch-modal';
+    m.setAttribute('role', 'dialog');
+    m.setAttribute('aria-modal', 'true');
+    m.style.cssText = 'position:fixed;inset:0;background:rgba(16,12,28,0.94);z-index:6000;display:none;' +
+      'align-items:center;justify-content:center;flex-direction:column;padding:20px';
+    m.innerHTML =
+      '<div class="yt-topbar">' +
+        '<div class="yt-topbar-title"></div>' +
+        '<button class="yt-close" aria-label="Tutup video">&#10005;</button>' +
+      '</div>' +
+      '<div class="yt-frame-wrap"><iframe allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    document.body.appendChild(m);
+    return m;
+  }
+  function openYT(start, label) {
+    if (!modal) modal = buildModal();
+    var title = modal.querySelector('.yt-topbar-title');
+    var frame = modal.querySelector('iframe');
+    title.textContent = '\u25B6 ' + label;
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + YT_ID +
+      '?start=' + start + '&rel=0&modestbranding=1&autoplay=1';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeYT() {
+    if (!modal) return;
+    var frame = modal.querySelector('iframe');
+    frame.removeAttribute('src'); // stop playback
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.yt-watch');
+    if (btn) {
+      openYT(parseInt(btn.dataset.ytStart, 10) || 0, btn.dataset.ytLabel || 'Video asli');
+      return;
+    }
+    if (modal && modal.style.display !== 'none' &&
+        (e.target === modal || e.target.closest('.yt-close'))) closeYT();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeYT(); });
+})();
+
 /* === Lightbox gambar demo (kursus anak: klik gambar → lihat besar) === */
 (function () {
   var overlay = null;
