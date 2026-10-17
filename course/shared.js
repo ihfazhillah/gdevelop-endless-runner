@@ -58,6 +58,29 @@
     render();
   });
 
+  // Checklist per langkah — tombol "tandai selesai" di dalam tiap tutorial-step
+  document.querySelectorAll('.checklist-step').forEach(function (step) {
+    var mod = (step.closest('.course-module') || {}).id || 'page';
+    var btn = step.querySelector('.checklist-btn');
+    if (!btn) return;
+    var sid = step.getAttribute('data-check-id');
+    var key = 'sc-clist-' + location.pathname + '-' + mod + '-' + sid;
+    var done = false;
+    try { done = localStorage.getItem(key) === '1'; } catch (e) {}
+    function render() {
+      step.classList.toggle('done', done);
+      btn.textContent = done ? '\u2713 tandai selesai' : 'tandai selesai';
+      btn.setAttribute('aria-pressed', String(done));
+    }
+    render();
+    btn.addEventListener('click', function () {
+      done = !done;
+      try { localStorage.setItem(key, done ? '1' : '0'); } catch (e) {}
+      render();
+    });
+  });
+
+
   // Quiz
   document.querySelectorAll('.quiz-block').forEach(function (block) {
     var opts = block.querySelectorAll('.quiz-opt');
