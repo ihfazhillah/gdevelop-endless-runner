@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Game Pertamamu — Petualangan GDevelop (Tanpa Coding!) | Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .hero-figure { margin: var(--space-8) 0 var(--space-12); }
+    .dataset-note { background: var(--color-info-light); border-left: 4px solid var(--color-info);
+      padding: var(--space-5) var(--space-6); border-radius: var(--radius-md); margin-bottom: var(--space-12); }
+    .dataset-note h3 { color: var(--color-info); }
+    .fc { font-family: var(--font-mono); font-size: var(--text-xs); background: var(--color-bg-code);
+      color: #CBA6F7; padding: 2px 6px; border-radius: 4px; }
+    .course-cta { margin: var(--space-10) 0; }
+    .course-cta a.cta-big { display: inline-block; background: var(--color-accent); color: #fff;
+      font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg);
+      padding: var(--space-4) var(--space-8); border-radius: var(--radius-md);
+      transition: background var(--duration-fast), transform var(--duration-fast); }
+    .course-cta a.cta-big:hover { background: var(--color-accent-hover); text-decoration: none;
+      transform: translateY(-2px); }
+    .course-cta .cta-note { display: block; margin-top: var(--space-3); font-size: var(--text-sm);
+      color: var(--color-text-secondary); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-title"><a href="index.html">GDevelop Kids — Buat Game Pertamamu</a></div>
+      <div class="nav-links">
+        <a href="index.html" class="current">Home</a>
+        <a href="course.html">Course</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="hero">
+      <h1 class="hero-title">Buat game pertamamu — karakter lari, lompat, dan kamera yang mengikuti — semuanya tanpa coding!</h1>
+      <p class="hero-subtitle">Course ini menyalin alur tutorial video <em>"Make Your FIRST GAME In GDevelop (SUPER EASY) - No Coding Required!"</em> dari Proxlight, tetapi ditulis ulang untuk anak SD kelas 4–6. Kamu akan belajar menyusun <strong>balok perintah di GDevelop</strong> (bukan mengetik kode) untuk membuat <em>Endless Runner</em>: karakter yang bisa lari, melompat, dan kamera yang "mengekor". <strong>Satu course, satu halaman</strong>: enam modul dinavigasi lewat titik-titik di navbar.</p>
+    </section>
+
+    <div class="hero-figure figure">
+      <img src="../original_gdev_assets/m6_rocks.jpg" data-clip="../original_gdev_assets/clips/m6_rocks.mp4" data-clipname="key_rocks_final" alt="Hasil akhir game: karakter lari di atas tanah dengan background dan batu" width="1280" height="720">
+      <figcaption><span class="fig-num">30</span>Ini kira-kira hasil akhirnya — game platformer versimu sendiri, dibuat hanya dengan menyusun balok perintah.</figcaption>
+    </div>
+
+    <div class="course-cta">
+      <a href="course.html" class="cta-big">Mulai Course &#8594;</a>
+      <span class="cta-note">Gratis bandwidth: teks + gambar + <strong>video klip pendek</strong> (klik ▶ pada gambar) yang diambil dari momen yang sama — jadi apabila kamu penasaran, gambar bisa "hidup" jadi video asli, tanpa streaming.</span>
+    </div>
+
+    <div class="dataset-note">
+      <h3>Cara belajar di course ini</h3>
+      <p style="margin-bottom: var(--space-2)">Semua latihan memakai aplikasi gratis <strong>GDevelop</strong> (buka di <a href="https://gdevelop.io" target="_blank" rel="noopener">gdevelop.io</a> — minta bantuan orang dewasa saat mengunduh). Setiap modul punya ritus <strong>Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</strong>: kamu mengikuti langkah di video sendiri di komputermu, lalu menulis 1 baris catatan LOG di bukumu.</p>
+      <p style="margin-bottom: 0">Video aslinya 13 menit 45 detik dan dibuat oleh pembuat konten Proxlight. Di sini kita memecahnya menjadi <strong>6 modul</strong>, memperlambatnya, dan menambahkan gambar diam dari video supaya kamu bisa melihat bentuk tiap langkah. Hasilnya <strong>game yang kau buat sendiri</strong> di GDevelop — tidak ada file game yang perlu disalin.</p>
+    </div>
+
+    <div class="diataxis-intro">
+      Course ini memakai kerangka <strong>Diataxis</strong>: <strong>Tutorial</strong> = praktik hands-on langkah demi langkah (kamu yang menyusun baloknya). <strong>How-to</strong> = resep singkat tugas tertentu. <strong>Explanation</strong> = mengapa bekerja (isi video). <strong>Reference</strong> = tabel cepat. Setiap modul punya checklist hands-on yang tersimpan otomatis, tab <em>video &#8596; teks</em> (apa yang dikatakan video vs apa artinya dalam bahasa sehari-hari), dan <strong>ujian akhir</strong> berupa kuis + misi mini.
+    </div>
+
+    <div class="module-grid">
+
+      <a href="course.html#module-1" class="module-card actor-1">
+        <span class="module-number">01</span>
+        <h2 class="module-title">Kenalan dengan GDevelop</h2>
+        <p class="module-subtitle">Buka GDevelop, buat proyek <code>Endless Runner</code>, dan kenali tiga area penting: Objects, Kanvas, Events (video 00:00–02:38).</p>
+        <div class="badge-row">
+          <span class="diataxis-badge tutorial">Tutorial</span>
+          <span class="diataxis-badge explain">Explanation</span>
+          <span class="diataxis-badge reference">Reference</span>
+        </div>
+      </a>
+
+      <a href="course.html#module-2" class="module-card actor-2">
+        <span class="module-number">02</span>
+        <h2 class="module-title">Karaktermu Mulai Hidup</h2>
+        <p class="module-subtitle">Tambahkan Sprite <code>player</code>, buat animasi <em>idle</em> &amp; <em>run</em> (seperti flipbook), lalu lihat dia lari di preview (video 02:00–02:46).</p>
+        <div class="badge-row">
+          <span class="diataxis-badge tutorial">Tutorial</span>
+          <span class="diataxis-badge howto">How-to</span>
+          <span class="diataxis-badge explain">Explanation</span>
+          <span class="diataxis-badge reference">Reference</span>
+        </div>
+      </a>
+
+      <a href="course.html#module-3" class="module-card actor-3">
+        <span class="module-number">03</span>
+        <h2 class="module-title">Ayo Melompat!</h2>
+        <p class="module-subtitle">Berikan behavior <em>Platformer Character</em> (gravitasi + lompat) dan buat tanah dengan behavior <em>Platform</em> (video 02:57–05:10).</p>
+        <div class="badge-row">
+          <span class="diataxis-badge tutorial">Tutorial</span>
+          <span class="diataxis-badge howto">How-to</span>
+          <span class="diataxis-badge explain">Explanation</span>
+          <span class="diataxis-badge reference">Reference</span>
+        </div>
+      </a>
+
+      <a href="course.html#module-4" class="module-card actor-4">
+        <span class="module-number">04</span>
+        <h2 class="module-title">Kamera Ikut Kamu</h2>
+        <p class="module-subtitle">Pertama kali menyusun Events: kamera zoom ke awal, lalu Camera X mengikuti player supaya tidak hilang (video 05:19–07:09).</p>
+        <div class="badge-row">
+          <span class="diataxis-badge tutorial">Tutorial</span>
+          <span class="diataxis-badge howto">How-to</span>
+          <span class="diataxis-badge explain">Explanation</span>
+          <span class="diataxis-badge reference">Reference</span>
+        </div>
+      </a>
+
+      <a href="course.html#module-5" class="module-card actor-5">
+        <span class="module-number">05</span>
+        <h2 class="module-title">Tombol Ajaib</h2>
+        <p class="module-subtitle">Buat event "tombol kanan → lari + animasi run", duplikasi untuk kiri, dan perbaiki flip karakter (video 07:19–09:00).</p>
+        <div class="badge-row">
+          <span class="diataxis-badge tutorial">Tutorial</span>
+          <span class="diataxis-badge howto">How-to</span>
+          <span class="diataxis-badge explain">Explanation</span>
+          <span class="diataxis-badge reference">Reference</span>
+        </div>
+      </a>
+
+      <a href="course.html#module-6" class="module-card actor-6">
+        <span class="module-number">06</span>
+        <h2 class="module-title">Rapi, Pas &amp; Cantik</h2>
+        <p class="module-subtitle">Perbaiki lompatan, hilangkan efek "melayang" (collision mask), kembalikan animasi idle, dan hias dengan background (video 09:08–13:00).</p>
+        <div class="badge-row">
+          <span class="diataxis-badge tutorial">Tutorial</span>
+          <span class="diataxis-badge howto">How-to</span>
+          <span class="diataxis-badge explain">Explanation</span>
+          <span class="diataxis-badge reference">Reference</span>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <script src="shared.js"></script>
+</body>
+</html>

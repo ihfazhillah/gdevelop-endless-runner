@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Game Pertamamu — Petualangan GDevelop (Tanpa Coding!)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .mascot { display:inline-block; font-size:1.4rem; margin-right:var(--space-2); }
+    .fc { font-family:var(--font-mono); font-size:var(--text-xs); background:var(--color-bg-code);
+      color:#CBA6F7; padding:2px 6px; border-radius:4px; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-title"><span class="nav-course-label">GDevelop Kids</span><a href="index.html">Course</a></div>
+    <div class="nav-dots" role="tablist" aria-label="Navigasi module">
+      <a href="#module-1" class="nav-dot active" title="Module 1 — Kenalan dengan GDevelop"></a>
+      <a href="#module-2" class="nav-dot" title="Module 2 — Karaktermu Mulai Hidup"></a>
+      <a href="#module-3" class="nav-dot" title="Module 3 — Ayo Melompat!"></a>
+      <a href="#module-4" class="nav-dot" title="Module 4 — Kamera Ikut Kamu"></a>
+      <a href="#module-5" class="nav-dot" title="Module 5 — Tombol Ajaib"></a>
+      <a href="#module-6" class="nav-dot" title="Module 6 — Rapi, Pas & Cantik"></a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="course.html" class="current">Course</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- ══════════════════════════ MODULE 1 ══════════════════════════ -->
+  <section class="course-module" id="module-1">
+    <header class="page-header">
+      <span class="page-number">01</span>
+      <h1 class="page-title">Kenalan dengan GDevelop</h1>
+      <p class="page-subtitle">Buka GDevelop, buat proyek pertama, dan kenali tiga tempat penting: <em>Objects</em>, <em>Kanvas</em>, dan <em>Events</em>.</p>
+    </header>
+
+    <!-- Pembuka "Mengapa…?" -->
+    <section class="screen screen-opener">
+      <h2 class="screen-heading">Mengapa kita bisa membuat game <em>tanpa</em> coding?</h2>
+      <p><span class="mascot">🎮</span>Bayangkan kamu punya kotak Lego ajaib: semua baloknya sudah punya <span class="term" data-def="Perintah siap pakai yang tinggal dihubung-hubungkan seperti balok Lego.">blok perintah</span> yang bisa disambung-sambung. GDevelop itu seperti kotak Lego itu! Pembuatnya (Proxlight) bilang di video: <em>"kita akan membuat game hanya dengan no-code game developing tool yang bernama GDevelop."</em></p>
+      <p>Dengan GDevelop, kamu tidak mengetik kode rumit. Kamu <strong>menyusun balok kondisi dan aksi</strong> — seperti memberi perintah ke karakter mainanmu. Hari ini kamu akan membuat game <strong>Endless Runner</strong>: karakter yang berlari sambil melompati rintangan.</p>
+    </section>
+
+    <div class="diataxis-tabs">
+      <button class="diataxis-tab active" data-panel="panel-tutorial"><span class="tab-icon">&#x1F393;</span> Tutorial</button>
+      <button class="diataxis-tab" data-panel="panel-howto"><span class="tab-icon">&#x1F527;</span> How-to</button>
+      <button class="diataxis-tab" data-panel="panel-explanation"><span class="tab-icon">&#x1F4A1;</span> Explanation</button>
+      <button class="diataxis-tab" data-panel="panel-reference"><span class="tab-icon">&#x1F4CB;</span> Reference</button>
+    </div>
+
+    <div id="panel-tutorial" class="diataxis-panel active">
+      <div class="hand-on" id="ho-m1">
+        <div class="hand-on-header">
+          <span class="ha-icon">&#x1F4DD;</span>
+          <span class="ha-title">Ritual: Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</span>
+          <span class="ha-progress">0 / 5 selesai</span>
+        </div>
+        <div class="hand-on-progress-bar" style="width:0%"></div>
+        <div class="hand-on-body">
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Buka GDevelop (minta bantuan orang dewasa saat mengunduh)</h4>
+            <p style="font-size:var(--text-sm)">Buka situs web GDevelop, unduh aplikasinya, atau jalankan lewat browser. Semua gratis!</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Buat proyek baru: <code>Endless Runner</code></h4>
+            <p style="font-size:var(--text-sm)">Klik <strong>Create a project</strong>, ketik nama, lalu pilih <strong>Desktop Full HD</strong> + <em>optimize for pixel art</em>.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Jelajahi 3 area utama: Objects, Kanvas, Events</h4>
+            <p style="font-size:var(--text-sm)">Cari panel Objects di kiri, kanvas besar di tengah, tab Events di atas.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Lihat daftar objek yang bisa dibuat</h4>
+            <p style="font-size:var(--text-sm)">Sprite, tile Sprite, 3D box, 3D model — cukup lihat dulu, kita pakai belakangan.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tekan tombol Play / Preview — proyek masih kosong</h4>
+            <p style="font-size:var(--text-sm)">Game akan terbuka tapi belum ada apa-apa. Tidak apa-apa, itu wajar.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 1 — apa yang akan kita buat (dari video 00:00)</div>
+        <h3>Kenalan dulu dengan game impianmu</h3>
+        <p>Di video, Proxlight membuka dengan janji: <em>"di akhir tutorial ini kamu akan bisa membuat game platformer seperti ini — kamu bisa menjalankan player dengan keyboard, dan ini akan jadi endless runner game."</em></p>
+        <p>Game impian kita: karakter lari ke kanan, bisa melompat, dan ada tanah untuk berlari. Sederhana, tapi menyenangkan!</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m6_final.jpg" data-clip="../original_gdev_assets/clips/m6_final.mp4" alt="Hasil akhir game: karakter lari di game jadi" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">01</span>Ini kira-kira hasil akhirnya — karakter, tanah, dan kamera yang mengikuti.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 2 — unduh & buat proyek (00:36)</div>
+        <h3>Buka GDevelop dan buat proyek baru</h3>
+        <p>Video: <em>"sebelum masuk ke software-nya, kamu perlu mengunduhnya"</em>. Minta bantuan orang dewasa untuk mengunduh dari situs resmi GDevelop, lalu buka aplikasinya.</p>
+        <p>Setelah terbuka, kamu akan lihat jendela seperti di bawah ini — ada proyek, template, dan aset.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m1_app_window.jpg" data-clip="../original_gdev_assets/clips/m1_app_window.mp4" alt="Jendela awal GDevelop menampilkan proyek dan template" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">02</span>Jendela awal GDevelop — tempat kamu memilih proyek baru.</figcaption>
+        </div>
+        <p>Klik <strong>Create a project</strong> (Buat Proyek). Beri nama proyekmu, misalnya <code>Endless Runner</code>. Kalau bingung nama, ada tombol <strong>Randomize</strong> di video.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m1_create_form.jpg" data-clip="../original_gdev_assets/clips/m1_create_form.mp4" alt="Form membuat proyek baru dengan pilihan Desktop Full HD" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">03</span>Isi nama proyek, lalu pilih <em>Desktop Full HD</em> + <em>optimize for pixel art</em>.</figcaption>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">&#x2139;&#xFE0F;</span><div class="callout-content">
+          <span class="callout-title">Beda dengan video</span>
+          <p>Boleh pakai nama apa saja. Pilih <strong>Desktop Full HD</strong> dan centang <em>optimize for pixel art</em> persis seperti video — karena karakter kita nanti bergaya pixel art.</p></div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 3 — kenali 3 area penting (01:32)</div>
+        <h3>Ini dia "rumah" kita selanjutnya</h3>
+        <p>Video: <em>"setelah ini kamu bisa lihat interfacenya — sangat simple dan sangat mudah digunakan."</em> Kamu akan melihat tiga tempat penting:</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m1_editor.jpg" data-clip="../original_gdev_assets/clips/m1_editor.mp4" alt="Antarmuka GDevelop: Objects, Kanvas, Events" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">04</span>Antarmuka GDevelop. Kiri: Objects. Tengah: Kanvas (panggung). Atas: tab Events (perintah).</figcaption>
+        </div>
+        <ul style="margin:var(--space-3) 0 var(--space-3) var(--space-6);font-size:var(--text-sm)">
+          <li><strong>Objects</strong> (kiri): tempat menyimpan semua "benda" di game — karakter, tanah, batu.</li>
+          <li><strong>Kanvas / Scene</strong> (tengah): panggung besar tempat game dimainkan.</li>
+          <li><strong>Events</strong> (tab di atas): tempat kita menyusun "balok perintah". Kata video: <em>"di sini kamu punya very simple objects option."</em></li>
+        </ul>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 4 — lihat daftar objek (01:42)</div>
+        <h3>Ada apa saja di dalam Objects?</h3>
+        <p>Video menjelaskan jenis-jenis objek: <em>"objek bisa berisi berbagai hal — Sprite (karaktermu), tile Sprite (untuk membuat tanah), 3D box, dan 3D model."</em></p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m1_objects_types.jpg" data-clip="../original_gdev_assets/clips/m1_objects_types.mp4" alt="Daftar objek: Sprite, tile Sprite, 3D box, 3D model" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">05</span>Berbagai jenis objek yang bisa kita tambahkan.</figcaption>
+        </div>
+        <p>Kita baru pakai <strong>Sprite</strong> dan <strong>tile Sprite</strong> di course ini. Yang lain cukup dilihat dulu.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 5 — coba preview (02:38)</div>
+        <h3>Tekan Play! (proyek masih kosong)</h3>
+        <p>Bagian atas ada tombol preview (▶). Video menekannya setiap kali mau melihat hasil. Tekan sekarang — jendela game akan terbuka, tapi masih kosong karena kita belum menambahkan apa-apa. Itu normal! Tutup jendelanya dan kembali ke editor.</p>
+        <div class="callout callout-warning"><span class="callout-icon">&#x26A0;&#xFE0F;</span><div class="callout-content">
+          <span class="callout-title">Tips</span>
+          <p>Tombol preview inilah "jendela sihir" kamu. Setiap habis menyusun perintah, tekan preview untuk melihat hasilnya. Jangan lupa tutup jendela sebelum lanjut mengedit.</p></div>
+        </div>
+        <div class="expected-result"><strong>Coba saja!</strong> Semua file tersimpan otomatis di proyekmu. Kalau muncul pertanyaan "simpan?", pilih Ya.</div>
+      </div>
+    </div>
+
+    <!-- ===== HOW-TO ===== -->
+    <div id="panel-howto" class="diataxis-panel">
+      <div class="howto-recipe"><h3>Resep: buka proyek GDevelop</h3>
+        <ol class="howto-list">
+          <li>Buka aplikasi/browser GDevelop.</li>
+          <li>Klik <strong>Create a project</strong> → isi nama.</li>
+          <li>Pilih <strong>Desktop Full HD</strong> → centang <em>optimize for pixel art</em>.</li>
+          <li>Klik <strong>Create project</strong>.</li>
+          <li>Tekan ▶ untuk preview (belum ada apa-apa, wajar).</li>
+        </ol>
+      </div>
+      <div class="howto-recipe"><h3>Berhenti saat bingung</h3>
+        <p>Kalau jendela GDevelop tiba-tiba aneh: tutup jendela preview, klik area Objects, dan cari tombol ▶ lagi. Galau itu biasa, semua pembuat game pernah mengalaminya!</p>
+      </div>
+    </div>
+
+    <!-- ===== EXPLANATION ===== -->
+    <div id="panel-explanation" class="diataxis-panel">
+      <h2>Mengapa ini bekerja</h2>
+      <p>GDevelop adalah <strong>engine game tanpa kode</strong>. Alih-alih menulis <span class="term" data-def="Baris perintah yang dibaca komputer untuk melakukan sesuatu.">kode</span>, kamu menyusun <strong>kondisi</strong> ("jika tombol kanan ditekan") dan <strong>aksi</strong> ("gerakkan karakter ke kanan"). Konsep ini dipakai semua game, dan ada di tab <strong>Events</strong>.</p>
+      <p>Video menekankan tiga hal bisa dilakukan hanya dengan klik dan seret: buat objek, atur gambar, dan hubungkan perintah — semuanya tanpa mengetik kode.</p>
+    </div>
+
+    <!-- ===== REFERENCE ===== -->
+    <div id="panel-reference" class="diataxis-panel">
+      <h2>Referensi cepat — kata-kata penting</h2>
+      <table class="ref-table">
+        <tr><th>Kata</th><th>Artinya (bahasa sehari-hari)</th></tr>
+        <tr><td><code>Sprite</code></td><td>Gambar karakter/benda bergerak</td></tr>
+        <tr><td><code>tile Sprite</code></td><td>Gambar yang bisa diulang untuk membuat tanah/dinding</td></tr>
+        <tr><td><code>Scene / Kanvas</code></td><td>Panggung tempat game dimainkan</td></tr>
+        <tr><td><code>Objects</code></td><td>Tempat menyimpan benda-benda game</td></tr>
+        <tr><td><code>Events</code></td><td>Tab tempat menyusun perintah kondisi → aksi</td></tr>
+        <tr><td><code>Preview</code></td><td>Tombol ▶ untuk mencoba menjalankan game</td></tr>
+      </table>
+    </div>
+
+    <!-- ===== UJIAN AKHIR ===== -->
+    <section class="screen screen-exam">
+      <h2 class="screen-heading">Ujian akhir — Module 1</h2>
+      <p>Kamu baru saja membuka GDevelop. Ayo pastikan kamu ingat tiga area pentingnya!</p>
+      <div class="quiz-container" id="quiz-m1">
+        <div class="quiz-question-block" data-correct="b"
+             data-explanation-right="Betul! Kiri = tempat menyimpan benda (Objects), tengah = panggung (Kanvas), dan atas = tempat perintah (Events). Ini rumah kita selama 6 pelajaran."
+             data-explanation-wrong="Belum tepat. Coba ingat kembali posisi tiga area di video: Objects di kiri, Kanvas di tengah, Events di atas.">
+          <h4 class="quiz-question">1. Di GDevelop, tempat kita menyusun perintah ("jika tombol ditekan → gerak") adalah…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Panel Objects (kiri)</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Tab Events (atas)</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Kanvas tengah (panggung)</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-question-block" data-correct="a"
+             data-explanation-right="Benar! Poster itu analogi yang bagus: Sprite untuk karakter, tile Sprite untuk tanah yang berulang. Video menyebut keduanya sebagai jenis objek yang bisa ditambahkan."
+             data-explanation-wrong="Hampir. Ingat video: Sprite = karakter, tile Sprite = tanah berulang. Keduanya ada di pilihan yang lebih lengkap.">
+          <h4 class="quiz-question">2. Mana yang benar tentang jenis objek di video?</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Sprite untuk karakter, tile Sprite untuk tanah berulang</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Sprite hanya untuk tanah, tile Sprite hanya untuk jendela</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>3D box adalah satu-satunya objek yang bisa dibuat</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary quiz-check-btn">Periksa</button>
+          <button class="btn btn-ghost quiz-reset-btn">Ulangi</button>
+        </div>
+      </div>
+      <div class="callout callout-accent"><span class="callout-icon">&#x1F4DD;</span><div class="callout-content">
+        <span class="callout-title">Misi mini — petualangan mengeksplor</span>
+        <p>Tanpa mengubah apa pun, coba <strong>klik semua tombol di atas editor</strong> satu per satu (kecuali tombol berbahaya seperti Hapus). Catat di buku: tombol apa yang muncul jendela Baru? Tulis <strong>LOG 1 baris</strong> kamu.</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════════════════════ MODULE 2 ══════════════════════════ -->
+  <section class="course-module" id="module-2">
+    <header class="page-header">
+      <span class="page-number">02</span>
+      <h1 class="page-title">Karaktermu Mulai Hidup</h1>
+      <p class="page-subtitle">Tambahkan karakter <em>player</em>, buat animasi <em>idle</em> dan <em>run</em>, lalu lihat dia bergerak di preview.</p>
+    </header>
+
+    <section class="screen screen-opener">
+      <h2 class="screen-heading">Mengapa satu gambar saja <em>tidak cukup</em>?</h2>
+      <p><span class="mascot">📖</span>Pernah membuat <strong>flipbook</strong>? Kamu menggambar di pojok buku, lalu membalik halamannya cepat-cepat dan gambarnya "hidup". Animasi di game bekerja persis seperti itu: <em>beberapa gambar yang berganti cepat</em> membuat mata kita mengira ada gerakan.</p>
+      <p>Di video, karakter kita punya <strong>posisi idle</strong> (berdiri) dan <strong>animasi lari</strong>. GDevelop menyebut kumpulan gambar ini <span class="term" data-def="Kumpulan gambar yang dijalankan berurutan supaya terlihat bergerak — seperti flipbook.">animasi</span>. Hari ini kita "menghidupkan" karakter dengan dua animasi ini.</p>
+    </section>
+
+    <div class="diataxis-tabs">
+      <button class="diataxis-tab active" data-panel="panel-tutorial"><span class="tab-icon">&#x1F393;</span> Tutorial</button>
+      <button class="diataxis-tab" data-panel="panel-howto"><span class="tab-icon">&#x1F527;</span> How-to</button>
+      <button class="diataxis-tab" data-panel="panel-explanation"><span class="tab-icon">&#x1F4A1;</span> Explanation</button>
+      <button class="diataxis-tab" data-panel="panel-reference"><span class="tab-icon">&#x1F4CB;</span> Reference</button>
+    </div>
+
+    <div id="panel-tutorial" class="diataxis-panel active">
+      <div class="hand-on" id="ho-m2">
+        <div class="hand-on-header">
+          <span class="ha-icon">&#x1F4DD;</span>
+          <span class="ha-title">Ritual: Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</span>
+          <span class="ha-progress">0 / 5 selesai</span>
+        </div>
+        <div class="hand-on-progress-bar" style="width:0%"></div>
+        <div class="hand-on-body">
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tambahkan objek Sprite bernama <code>player</code></h4>
+            <p style="font-size:var(--text-sm)">Di panel Objects, klik tambah ➕ → pilih Sprite. Beri nama <code>player</code>.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Import gambar idle dari Asset Store</h4>
+            <p style="font-size:var(--text-sm)">Cari gambar karakter (asset store). Ini posisi berdiri (idle).</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Rename animasi pertama menjadi <code>idle</code></h4>
+            <p style="font-size:var(--text-sm)">Video: "menamai setiap animasi itu bagus untuk mengorganisir animasimu".</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tambah animasi kedua: <code>run</code> + Loop</h4>
+            <p style="font-size:var(--text-sm)">Import 2–3 gambar lari, beri nama <code>run</code>, nyalakan Loop, atur timing.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tekan Preview &amp; lihat karakter lari</h4>
+            <p style="font-size:var(--text-sm)">Tonton animasi di jendela preview — karakter "berlari di tempat".</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 1 — buat objek player (video 02:00)</div>
+        <h3>Tambah Sprite "player"</h3>
+        <p>Video memulai: <em>"mari mulai dengan Sprite — saya akan menambahkan Sprite dan menamainya player."</em></p>
+        <p>Klik tombol <strong>tambah objek</strong> ➕ di panel Objects, pilih <strong>Sprite</strong>, lalu ketik nama <code>player</code>.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m1_objects_panel.jpg" data-clip="../original_gdev_assets/clips/m1_objects_panel.mp4" alt="Menu tambah objek di GDevelop" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">06</span>Pilih <em>Sprite</em> lalu beri nama <code>player</code>, persis video.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 2 — import gambar idle (video 02:09)</div>
+        <h3>Berikan gambar "berdiri" untuk karaktermu</h3>
+        <p>Video: <em>"mari import gambarnya dari asset store — ini gambar untuk posisi idle kita."</em> Asset Store adalah perpustakaan gambar gratis di GDevelop.</p>
+        <p>Cari gambar karakter yang kamu suka, lalu pilih. Ini gambar pertama = posisi berdiri (idle).</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m2_idle_image.jpg" data-clip="../original_gdev_assets/clips/m2_idle_image.mp4" alt="Sprite player dengan gambar idle" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">07</span>Karakter <code>player</code> dengan gambar idle pertamanya.</figcaption>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">&#x2139;&#xFE0F;</span><div class="callout-content">
+          <span class="callout-title">Beda dengan video</span>
+          <p>Kamu boleh pilih karakter mana pun dari Asset Store — tidak harus sama persis dengan video. Yang penting ada gambar berdiri / berjalan.</p></div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 3 — beri nama animasi (video 02:15)</div>
+        <h3>Rename animasi menjadi <code>idle</code></h3>
+        <p>Video menekankan kebiasaan baik: <em>"menamai setiap animasi dengan jelas akan sangat membantu untuk mengorganisir animasi-animasimu."</em> Di panel animasi, ubah nama animasi pertama menjadi <code>idle</code>.</p>
+        <p>Kenapa? Supaya nanti di Module 6 kita bisa menyuruh karakter "kembali ke idle" dengan memanggil nama itu.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 4 — buat animasi run (video 02:24)</div>
+        <h3>Tambah animasi lari + Loop</h3>
+        <p>Video: <em>"kita akan menambahkan animasi lain, namanya run. Tambahkan beberapa Sprite, lalu nyalakan Loop. Kamu bisa ubah timing-nya — cepat atau lambat."</em></p>
+        <div class="translate-block step-core" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.09);margin:1.5rem 0">
+          <div style="background:#1E1E2E;color:#CDD6F4;padding:1.25rem;font-family:var(--font-mono);font-size:0.85rem;line-height:1.7">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.5;margin-bottom:0.75rem">✓ Animasi (blok GDevelop)</div>
+            <div class="code-line"><span class="code-comment"># 1. Animasi "idle"</span></div>
+            <div class="code-line">→ gambar berdiri (1 frame)</div>
+            <div class="code-line"></div>
+            <div class="code-line"><span class="code-comment"># 2. Animasi "run"</span></div>
+            <div class="code-line">→ 2–3 gambar lari</div>
+            <div class="code-line">→ Loop: ON</div>
+            <div class="code-line">→ timing: atur cepat/lambat</div>
+          </div>
+          <div style="background:#FFFBF5;padding:1.25rem;font-size:0.875rem;line-height:1.7;border-left:3px solid #7C3AED">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.5;margin-bottom:0.75rem">PLAIN — apa artinya (cara video)</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Karakter berdiri diam</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Bayi flipbook: gambar berurutan</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Ulang terus menerus</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Kecepatan flipbook</div>
+          </div>
+        </div>
+        <div class="figure">
+          <img src="../original_gdev_assets/m2_run_anim.jpg" data-clip="../original_gdev_assets/clips/m2_run_anim.mp4" alt="Animasi run dengan banyak frame dan opsi Loop" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">08</span>Animasi <code>run</code> — beberapa gambar berurutan + Loop menyala.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 5 — preview animasi (video 02:46)</div>
+        <h3>Tonton karaktermu "lari"</h3>
+        <p>Video: <em>"mari lihat preview-nya — seperti yang kamu lihat, kita punya karakter yang sedang berlari."</em> Tekan ▶ dan perhatikan karaktermu berputar gambar (berlari di tempat). Coba ubah <strong>timing</strong> animasinya supaya lebih cepat atau lambat, lalu lihat bedanya.</p>
+        <div class="expected-result"><strong>Sudah bisa?</strong> Karaktermu "hidup": ada animasi berdiri (idle) dan animasi lari (run). Ini fondasi untuk Module 3.</div>
+      </div>
+    </div>
+
+    <div id="panel-howto" class="diataxis-panel">
+      <div class="howto-recipe"><h3>Resep: tambah animasi</h3>
+        <ol class="howto-list">
+          <li>Panel Objects → ➕ → Sprite → nama <code>player</code>.</li>
+          <li>Klik karakter di daftar → panel Animations.</li>
+          <li>Import gambar (Asset Store) → <strong>+ animasi baru</strong>.</li>
+          <li>Rename: <code>idle</code>, <code>run</code>.</li>
+          <li>Untuk animasi run: import beberapa frame → Loop ON.</li>
+          <li>Preview ▶ dan setel timing.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="panel-explanation" class="diataxis-panel">
+      <h2>Mengapa dua animasi?</h2>
+      <p>Animasi adalah <strong>flipbook digital</strong>. Tapi kalau karaktermu hanya punya gambar berdiri, dia tidak akan bisa "berlari". GDevelop memakai <strong>nama animasi</strong> (idle / run) supaya kamu bisa memerintahkan: "kalau sedang lari, pakai animasi run; kalau diam, pakai idle." Konsep ini (posisi diam vs gerak) ada di semua game.</p>
+    </div>
+
+    <div id="panel-reference" class="diataxis-panel">
+      <h2>Referensi cepat</h2>
+      <table class="ref-table">
+        <tr><th>Istilah</th><th>Artinya</th></tr>
+        <tr><td><code>Animation idle</code></td><td>Gambar saat karakter diam/berdiri</td></tr>
+        <tr><td><code>Animation run</code></td><td>Gambar berurutan saat lari (flipbook)</td></tr>
+        <tr><td><code>Loop</code></td><td>Ulangi animasi terus-menerus</td></tr>
+        <tr><td><code>Timing</code></td><td>Kecepatan pergantian gambar</td></tr>
+        <tr><td><code>Asset Store</code></td><td>Perpustakaan gambar gratis di GDevelop</td></tr>
+      </table>
+    </div>
+
+    <section class="screen screen-exam">
+      <h2 class="screen-heading">Ujian akhir — Module 2</h2>
+      <p>Karaktermu mulai hidup. Mari pastikan kamu paham animasi.</p>
+      <div class="quiz-container" id="quiz-m2">
+        <div class="quiz-question-block" data-correct="a"
+             data-explanation-right="Tepat! Animasi = beberapa gambar berurutan (seperti flipbook) yang diganti cepat sehingga terlihat bergerak."
+             data-explanation-wrong="Belum. Coba bayangkan flipbook: gambar berurutan yang dibalik cepat. Itu definisi animasi.">
+          <h4 class="quiz-question">1. Animasi dalam game bekerja seperti…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Flipbook — gambar berurutan yang diganti cepat</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Hanya satu gambar besar</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Suara yang diputar terus</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-question-block" data-correct="b"
+             data-explanation-right="Benar! Nama animasi (idle/run) dipakai supaya bisa diperintah: 'saat diam → idle', 'saat lari → run'. Inilah yang akan kita pakai di Event."
+             data-explanation-wrong="Belum. Nama animasi justru penting: membantu mengatur dan memanggil animasi nanti (mis. saat karakter berhenti lari).">
+          <h4 class="quiz-question">2. Mengapa kita memberi nama animasi (idle, run)?</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Supaya file komputer lebih cepat</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Supaya bisa diberi perintah: 'saat diam → idle'</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Supaya warna karakter berubah</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary quiz-check-btn">Periksa</button>
+          <button class="btn btn-ghost quiz-reset-btn">Ulangi</button>
+        </div>
+      </div>
+      <div class="callout callout-accent"><span class="callout-icon">&#x1F4DD;</span><div class="callout-content">
+        <span class="callout-title">Misi mini — detektif animasi</span>
+        <p>Ubah <strong>timing</strong> animasi <code>run</code> menjadi sangat lambat, lalu preview. Apakah lari-nya jadi "saklek" (seperti robot)? Ubah lagi jadi sangat cepat. <strong>Tulis LOG 1 baris</strong>: bedanya apa?</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════════════════════ MODULE 3 ══════════════════════════ -->
+  <section class="course-module" id="module-3">
+    <header class="page-header">
+      <span class="page-number">03</span>
+      <h1 class="page-title">Ayo Melompat!</h1>
+      <p class="page-subtitle">Berikan <em>gravity</em> (gravitasi) agar karakter bisa lompat, dan buat tanah tempat dia berlari.</p>
+    </header>
+
+    <section class="screen screen-opener">
+      <h2 class="screen-heading">Mengapa karakter butuh gravitasi &amp; tanah?</h2>
+      <p><span class="mascot">☀️</span>Kalau kamu melompat di dunia nyata, apa yang membuatmu kembali turun? <strong>Gravitasi</strong>! Tanpa gravitasi, karaktermu akan melayang ke angkasa seperti balon yang lepas.</p>
+      <p>Di video, Proxlight memberi player behavior <strong>Platformer Character</strong> — ini "tubuh" karakter: dia kena gravitasi, bisa lari, dan bisa melompat. Lalu kita buat <strong>tanah</strong> memakai tile Sprite, dan bilang ke tanah: "jadilah platform yang bisa ditapaki." Video: <em>"kita perlu tanah supaya player bisa berlari di atasnya."</em></p>
+    </section>
+
+    <div class="diataxis-tabs">
+      <button class="diataxis-tab active" data-panel="panel-tutorial"><span class="tab-icon">&#x1F393;</span> Tutorial</button>
+      <button class="diataxis-tab" data-panel="panel-howto"><span class="tab-icon">&#x1F527;</span> How-to</button>
+      <button class="diataxis-tab" data-panel="panel-explanation"><span class="tab-icon">&#x1F4A1;</span> Explanation</button>
+      <button class="diataxis-tab" data-panel="panel-reference"><span class="tab-icon">&#x1F4CB;</span> Reference</button>
+    </div>
+
+    <div id="panel-tutorial" class="diataxis-panel active">
+      <div class="hand-on" id="ho-m3">
+        <div class="hand-on-header">
+          <span class="ha-icon">&#x1F4DD;</span>
+          <span class="ha-title">Ritual: Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</span>
+          <span class="ha-progress">0 / 6 selesai</span>
+        </div>
+        <div class="hand-on-progress-bar" style="width:0%"></div>
+        <div class="hand-on-body">
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tambah behavior <code>Platformer Character</code> ke player</h4>
+            <p style="font-size:var(--text-sm)">Klik player → tab Behaviors → Add → Platformer Character.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Jelajahi pengaturan (gravity, jump speed)</h4>
+            <p style="font-size:var(--text-sm)">Video: "kamu bisa ubah jump speed atau gravity di sini."</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tarik player ke kanvas, perbesar sedikit</h4>
+            <p style="font-size:var(--text-sm)">Seret ke tengah panggung, ubah ukuran.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Buat tanah dengan tile Sprite + gambar ground</h4>
+            <p style="font-size:var(--text-sm)">Objek tile Sprite diisi gambar tanah; seret ke bawah kanvas.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Beri tanah behavior <code>Platform</code> (supaya bisa ditapaki)</h4>
+            <p style="font-size:var(--text-sm)">"Behavior itulah yang penting — belum ada, si player jatuh menembus tanah."</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Preview — player lari &amp; lompat di atas tanah</h4>
+            <p style="font-size:var(--text-sm)">Coba tombol panah kiri/kanan + lompat.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 1 — behavior (video 02:57)</div>
+        <h3>Berikan "tubuh" ke karakter: Platformer Character</h3>
+        <p>Video: <em>"tab Behavior sangat penting untuk player karena ia menambah fisika ke player-mu."</em> Pilih objek <code>player</code> → buka tab <strong>Behaviors</strong> → klik Add → pilih <strong>Platformer Character</strong>.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m3_behaviors_tab.jpg" data-clip="../original_gdev_assets/clips/m3_behaviors_tab.mp4" alt="Tab Behaviors player dengan Platformer Character" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">09</span>Tambahkan behavior <em>Platformer Character</em> — cara karakter "merasakan" gravitasi.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 2 — pengaturan (video 03:15)</div>
+        <h3>Jelajahi jump speed &amp; gravity</h3>
+        <p>Video: <em>"secara default ia punya pengaturan tertentu — kalau ingin ubah jump speed atau gravity, bisa di sini."</em> Lihat-lihat pengaturannya sekarang. Kita akan mengubahnya di Module 6 kalau lompatannya terlalu tinggi.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 3 — tarik player &amp; grid (video 03:41)</div>
+        <h3>Letakkan karakter di atas panggung</h3>
+        <p>Video menyeret player ke kanvas dan memperbesar sedikit. Cara menampilkan grid: video mengingatkan <em>"kamu bisa klik Show grid untuk menampilkan garis bantu."</em> Gunakan grid supaya letak karakter rapi.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m3_player_canvas.jpg" data-clip="../original_gdev_assets/clips/m3_player_canvas.mp4" alt="Player ditarik ke kanvas, spasi grid terlihat" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">10</span>Player ada di kanvas; nyalakan grid agar mudah mengatur posisi.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 4 — tanah (video 03:59)</div>
+        <h3>Buat tanah dengan tile Sprite</h3>
+        <p>Video: <em>"kita perlu tanah agar player bisa berlari di atasnya. Kali ini kita tambah objek tile Sprite."</em> Beda dengan Sprite biasa: tile Sprite bisa diulang-ulang sehingga cocok untuk tanah/dinding panjang.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m3_ground_tile.jpg" data-clip="../original_gdev_assets/clips/m3_ground_tile.mp4" alt="Objek tile Sprite untuk tanah" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">11</span>Tanah memakai tile Sprite — bisa diulang selebar apa pun.</figcaption>
+        </div>
+        <div class="compare-grid">
+          <div class="figure">
+            <img src="../original_gdev_assets/m3_ground_placed.jpg" data-clip="../original_gdev_assets/clips/m3_ground_placed.mp4" alt="Tanah tile Sprite terpasang" loading="lazy" width="1280" height="720">
+            <figcaption><span class="fig-num">12</span>Tanah tile Sprite</figcaption>
+          </div>
+          <div class="figure">
+            <img src="../original_gdev_assets/m3_player_fall.jpg" data-clip="../original_gdev_assets/clips/m3_player_fall.mp4" alt="Player jatuh menembus tanah karena belum ada behavior platform" loading="lazy" width="1280" height="720">
+            <figcaption><span class="fig-num">13</span>Kalau belum ada behavior Platform, player akan <strong>jatuh menembus tanah</strong>.</figcaption>
+          </div>
+        </div>
+        <div class="overlay-compare"><div class="vs-badge">vs</div><p>Kiri: setelah ditambah <code>Platform</code>. Kanan: sebelum — jatuh menembus tanah.</p></div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 5 — behavior platform (video 04:52)</div>
+        <h3>Beri tanah behavior "Platform"</h3>
+        <p>Video: <em>"player jatuh menembus tanah karena kita belum memberikan behavior ground. Ini penting!"</em> Pilih objek tanah → Behaviors → Add → pilih <strong>Platform</strong>. Sekarang tanah bisa ditapaki.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m3_player_walk.jpg" data-clip="../original_gdev_assets/clips/m3_player_walk.mp4" alt="Player berdiri di atas platform setelah diberi behavior Platform" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">14</span>Setelah behavior <em>Platform</em>, karakter berdiri di atas tanah dengan benar.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 6 — preview (video 05:10)</div>
+        <h3>Mainkan game pertamamu!</h3>
+        <p>Tekan ▶ dan coba: gerakkan player dengan panah kiri/kanan, dan lompat. Video: <em>"kamu bisa menggerakkan player dan melompat."</em> Selamat — kamu punya game mini (bukan endless runner penuh, tapi gerak + lompat sudah jalan).</p>
+        <div class="expected-result"><strong>Sudah bisa?</strong> Karakter lari ke kiri/kanan dan melompat di atas tanah. Ini "daging" game-mu!</div>
+      </div>
+    </div>
+
+    <div id="panel-howto" class="diataxis-panel">
+      <div class="howto-recipe"><h3>Resep: lompat + tanah</h3>
+        <ol class="howto-list">
+          <li>Player → Behaviors → Add → <strong>Platformer Character</strong>.</li>
+          <li>(Stok: jump speed &amp; gravity bisa diubah di sini.)</li>
+          <li>Seret player ke kanvas.</li>
+          <li>Objek tile Sprite + gambar tanah → seret ke bawah.</li>
+          <li>Tanah → Behaviors → Add → <strong>Platform</strong>.</li>
+          <li>Preview ▶.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="panel-explanation" class="diataxis-panel">
+      <h2>Mengapa ini bekerja</h2>
+      <p>Behavior adalah "otak bawaan" yang sudah ada di GDevelop. <strong>Platformer Character</strong> memberi 3 hal: <em>gerak maju, gerak mundur, dan gerak lompat</em>. Sedangkan <strong>Platform</strong> pada tanah membuat karakter bisa menapak, tidak jatuh menembus.</p>
+      <p>Video menegaskan batasnya: tanpa behavior Platform pada tanah, player "jatuh menembus" karena gravitasi terus menariknya.</p>
+    </div>
+
+    <div id="panel-reference" class="diataxis-panel">
+      <h2>Referensi cepat</h2>
+      <table class="ref-table">
+        <tr><th>Istilah</th><th>Artinya</th></tr>
+        <tr><td><code>Behavior Platformer Character</code></td><td>Memberi gravitasi, lari, lompat</td></tr>
+        <tr><td><code>Behavior Platform</code></td><td>Membuat objek bisa ditapaki</td></tr>
+        <tr><td><code>gravity</code></td><td>Kekuatan menarik ke bawah</td></tr>
+        <tr><td><code>jump speed</code></td><td>Kekuatan lompatan</td></tr>
+        <tr><td><code>Show grid</code></td><td>Garis bantu di kanvas</td></tr>
+      </table>
+    </div>
+
+    <section class="screen screen-exam">
+      <h2 class="screen-heading">Ujian akhir — Module 3</h2>
+      <p>Karakter lari &amp; lompat. Ayo cek pemahamanmu.</p>
+      <div class="quiz-container" id="quiz-m3">
+        <div class="quiz-question-block" data-correct="c"
+             data-explanation-right="Betul! Tanpa behavior Platform, gravitasi tetap menarik player sehingga ia menembus tanah. Itu persis kejadian di video."
+             data-explanation-wrong="Belum. Ingat momen video: player tampak 'jatuh menembus tanah' lalu ditambahkan behavior Platform. Itu kuncinya.">
+          <h4 class="quiz-question">1. Setelah player diberi behavior Platformer Character tapi tanah belum diberi behavior, apa yang terjadi saat preview?</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Karakter diam melayang di tengah</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Karakter langsung keluar dari layar</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Karakter jatuh menembus tanah</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-question-block" data-correct="a"
+             data-explanation-right="Tepat! Behavior Platformer Character memberi: gerak maju, gerak mundur, dan lompatan (3 gerakan inti)."
+             data-explanation-wrong="Hampir. Behavior Platformer Character justru menambah fisika: gerak maju + mundur + lompat.">
+          <h4 class="quiz-question">2. Behavior "Platformer Character" pada player menambah…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Gerak maju, gerak mundur, dan lompat</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Warna pelangi pada karakter</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Suara langkah kaki</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary quiz-check-btn">Periksa</button>
+          <button class="btn btn-ghost quiz-reset-btn">Ulangi</button>
+        </div>
+      </div>
+      <div class="callout callout-accent"><span class="callout-icon">&#x1F4DD;</span><div class="callout-content">
+        <span class="callout-title">Misi mini — detektif gravitasi</span>
+        <p>Buka pengaturan behavior Platformer Character, ubah <strong>jump speed</strong> menjadi sangat besar, lalu preview. Lompatan jadi secepat roket? Ubah jadi sangat kecil. <strong>Tulis LOG 1 baris</strong>: mana yang lebih menyenangkan?</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════════════════════ MODULE 4 ══════════════════════════ -->
+  <section class="course-module" id="module-4">
+    <header class="page-header">
+      <span class="page-number">04</span>
+      <h1 class="page-title">Kamera Ikut Kamu</h1>
+      <p class="page-subtitle">Buat kamera "mengekor" pemain: zoom-in di awal, dan mengikuti pergerakan karakter.</p>
+    </header>
+
+    <section class="screen screen-opener">
+      <h2 class="screen-heading">Mengapa kamera harus ikut bergerak?</h2>
+      <p><span class="mascot">🎥</span>Coba bayangkan sedang memotret sepeda yang lewat. Supaya terus terlihat, <strong>kameramu harus ikut bergerak</strong>. Dalam game, kamera = "mata pemain". Kalau kamera diam, karaktermu akan cepat menghilang ke luar layar.</p>
+      <p>Di video, Proxlight pertama membuat kamera <em>zoom</em> ke karakter di awal game, lalu mengganti posisi kamera mengikuti karakter. Kita akan menyusun perintah ini di tab <strong>Events</strong> untuk pertama kalinya.</p>
+    </section>
+
+    <div class="diataxis-tabs">
+      <button class="diataxis-tab active" data-panel="panel-tutorial"><span class="tab-icon">&#x1F393;</span> Tutorial</button>
+      <button class="diataxis-tab" data-panel="panel-howto"><span class="tab-icon">&#x1F527;</span> How-to</button>
+      <button class="diataxis-tab" data-panel="panel-explanation"><span class="tab-icon">&#x1F4A1;</span> Explanation</button>
+      <button class="diataxis-tab" data-panel="panel-reference"><span class="tab-icon">&#x1F4CB;</span> Reference</button>
+    </div>
+
+    <div id="panel-tutorial" class="diataxis-panel active">
+      <div class="hand-on" id="ho-m4">
+        <div class="hand-on-header">
+          <span class="ha-icon">&#x1F4DD;</span>
+          <span class="ha-title">Ritual: Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</span>
+          <span class="ha-progress">0 / 5 selesai</span>
+        </div>
+        <div class="hand-on-progress-bar" style="width:0%"></div>
+        <div class="hand-on-body">
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Buka tab Events</h4>
+            <p style="font-size:var(--text-sm)">Ini pertama kalinya kita menyusun perintah!</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Event 1: di awal scene, camera center ke player + zoom 2/3</h4>
+            <p style="font-size:var(--text-sm)">Aksi: Center camera on object → player; Set zoom → 3.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Event 2: Camera X = Player.X()</h4>
+            <p style="font-size:var(--text-sm)">Ini yang membuat kamera "ngekor" ke kanan/kiri.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Event 3: Camera zoom = 3 (biar dekat)</h4>
+            <p style="font-size:var(--text-sm)">Set zoom per frame supaya tetap dekat saat karakter jalan.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Preview &amp; bandingkan: dengan / tanpa kamera</h4>
+            <p style="font-size:var(--text-sm)">Matikan event kamera → bandingkan.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 1 — tab Events (video 05:19)</div>
+        <h3>Tempat menyusun perintah</h3>
+        <p>Video: <em>"kita akan menambahkan event ke game — misalnya di awal, kamera zoom ke karakter."</em> Klik tab <strong>Events</strong> di bagian atas editor. Ini "jantung" GDevelop: daftar perintah kondisi → aksi.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m4_events_tab.jpg" data-clip="../original_gdev_assets/clips/m4_events_tab.mp4" alt="Tab Events kosong di GDevelop" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">15</span>Tab <em>Events</em> — tempat kita menyusun kamera yang ngekor.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 2 — kamera di awal scene (video 05:30)</div>
+        <h3>Buat event: kamera zoom ke player</h3>
+        <p>Video: <em>"di awal scene kita bisa tambah aksi: pilih objek player, lalu di bagian camera pilih center the camera on the object, lalu set zoom."</em></p>
+        <p>Buat event baru (di awal), pilih aksi: <strong>Camera → Center camera on object</strong>, objek <code>player</code>. Lalu ubah skala/zoom ke <code>2</code> atau <code>3</code>. Video: <em>"kamu bisa set ke 2, atau 3 — ini bekerja paling baik."</em></p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m4_camera_center.jpg" data-clip="../original_gdev_assets/clips/m4_camera_center.mp4" alt="Event camera center ke player dengan zoom" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">16</span>Aksi kamera: pusatkan ke <em>player</em>, atur zoom.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 3 — kamera ngekor (video 06:13)</div>
+        <h3>Buat event: Camera X = Player.X()</h3>
+        <p>Video: <em>"supaya saat player bergerak kamera mengikutinya, kita tambahkan event: camera X position = posisi X player."</em> Buat event baru (tanpa kondisi — berjalan setiap frame), aksi: <strong>Camera → Change camera X position</strong>, isikan ekspresi posisi-X objek <code>player</code>.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m4_camera_x.jpg" data-clip="../original_gdev_assets/clips/m4_camera_x.mp4" alt="Event camera X = posisi X player" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">17</span>Setiap frame, posisi-X kamera disamakan dengan posisi-X <em>player</em>.</figcaption>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">&#x2139;&#xFE0F;</span><div class="callout-content">
+          <span class="callout-title">Nggak perlu hafal</span>
+          <p>Kamu tidak perlu mengetik rumus. Di GDevelop, pilih objek player dan pilih <em>center</em> / X position dari menunya. Seret-klik saja!</p></div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 4 — atur zoom tetap (video 06:54)</div>
+        <h3>Jaga jarak dekat: camera zoom</h3>
+        <p>Video juga menyetel <strong>camera zoom</strong> = <code>3</code> dan menerapkannya ke layer dasar (base layer). Ini menjaga kamera tetap "dekat" supaya karaktermu besar terlihat.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m4_camera_zoom.jpg" data-clip="../original_gdev_assets/clips/m4_camera_zoom.mp4" alt="Event camera zoom ke base layer" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">18</span>Atur camera zoom → <em>base layer</em>, supaya tetap dekat saat karakter bergerak.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 5 — preview &amp; bandingkan (video 07:09)</div>
+        <h3>Coba dan bandingkan</h3>
+        <p>Tekan ▶ dan gerakkan player. Kamera sekarang mengikuti! Sekarang coba: tahan tombol "matikan" event kamera (atau salin proyek) dan bandingkan. Tanpa kamera, karakter cepat menghilang dari layar. Video menunjukkannya dengan jelas.</p>
+        <div class="compare-grid">
+          <div class="figure">
+            <img src="../original_gdev_assets/m4_camera_follow.jpg" data-clip="../original_gdev_assets/clips/m4_camera_follow.mp4" alt="Dengan kamera ngekor" loading="lazy" width="1280" height="720">
+            <figcaption><span class="fig-num">19</span>Dengan kamera ngekor</figcaption>
+          </div>
+          <div class="figure">
+            <img src="../original_gdev_assets/m5_player_runs.jpg" data-clip="../original_gdev_assets/clips/m5_player_runs.mp4" alt="Tanpa kamera, karakter hilang dari layar" loading="lazy" width="1280" height="720">
+            <figcaption><span class="fig-num">20</span>Tanpa kamera — karaktermu cepat hilang</figcaption>
+          </div>
+        </div>
+        <div class="overlay-compare"><div class="vs-badge">vs</div><p>Kiri: kamera ngekor. Kanan: kamera diam — karakter menghilang dari pandangan.</p></div>
+        <div class="expected-result"><strong>Sudah bisa?</strong> Kamera membesar dan mengikuti karakter ke mana pun dia lari.</div>
+      </div>
+    </div>
+
+    <div id="panel-howto" class="diataxis-panel">
+      <div class="howto-recipe"><h3>Resep: kamera ngekor</h3>
+        <ol class="howto-list">
+          <li>Tab Events → buat event baru.</li>
+          <li>Aksi: <strong>Center camera on object</strong> → <code>player</code>.</li>
+          <li>Aksi: <strong>Set camera zoom</strong> → 2 atau 3.</li>
+          <li>Event baru (tanpa kondisi): <strong>Change camera X position</strong> → posisi X <code>player</code>.</li>
+          <li>Event baru: <strong>Set camera zoom</strong> → 3 → base layer.</li>
+          <li>Preview ▶.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="panel-explanation" class="diataxis-panel">
+      <h2>Mengapa ini bekerja</h2>
+      <p>Kamera adalah "mata" game. Event <em>tanpa kondisi</em> di GDevelop berjalan <strong>setiap frame</strong> (60× per detik), jadi tiap kali karakter bergerak, posisi kamera langsung diperbarui ke posisi-X player. Karena hanya sumbu X yang diubah, kamera bisa "mengikuti" secara halus ke kiri–kanan tanpa keluar dari dunia game.</p>
+    </div>
+
+    <div id="panel-reference" class="diataxis-panel">
+      <h2>Referensi cepat</h2>
+      <table class="ref-table">
+        <tr><th>Istilah</th><th>Artinya</th></tr>
+        <tr><td><code>Camera</code></td><td>Mata pemain, menentukan apa yang terlihat</td></tr>
+        <tr><td><code>Center camera on object</code></td><td>Buat kamera berpusat pada objek</td></tr>
+        <tr><td><code>Camera X position</code></td><td>Posisi kiri-kanan kamera</td></tr>
+        <tr><td><code>Camera zoom</code></td><td>Seberapa dekat/jauh gambar</td></tr>
+        <tr><td><code>Base layer</code></td><td>Lapisan dasar tempat semua objek ditaruh</td></tr>
+      </table>
+    </div>
+
+    <section class="screen screen-exam">
+      <h2 class="screen-heading">Ujian akhir — Module 4</h2>
+      <p>Kamera sekarang ngekor! Cek pemahamanmu.</p>
+      <div class="quiz-container" id="quiz-m4">
+        <div class="quiz-question-block" data-correct="b"
+             data-explanation-right="Betul! Event tanpa kondisi berjalan setiap frame (terus-menerus), jadi kamera selalu diperbarui ke posisi player."
+             data-explanation-wrong="Belum. Event tanpa kondisi itu jalan setiap saat (setiap frame), bukan sekali saja. Itulah kenapa kamera terus mengikuti.">
+          <h4 class="quiz-question">1. Agar kamera terus mengikuti player, event "Camera X = Player.X()" dibuat…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Hanya berjalan sekali saat game dibuka</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Tanpa kondisi (berjalan setiap frame)</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Hanya saat pemain menekan tombol lompat</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-question-block" data-correct="c"
+             data-explanation-right="Tepat! Tanpa kamera ngekor, karaktermu yang lari akan segera keluar dari pandangan layar."
+             data-explanation-wrong="Belum. Saat lari jauh ke kanan, tanpa kamera ngekor dia akan menghilang dari layar.">
+          <h4 class="quiz-question">2. Yang terjadi kalau kita tidak membuat kamera mengikuti player adalah…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Game langsung berhenti</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Warna layar berubah</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Player hilang dari layar saat berlari jauh</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary quiz-check-btn">Periksa</button>
+          <button class="btn btn-ghost quiz-reset-btn">Ulangi</button>
+        </div>
+      </div>
+      <div class="callout callout-accent"><span class="callout-icon">&#x1F4DD;</span><div class="callout-content">
+        <span class="callout-title">Misi mini — sutradara kamera</span>
+        <p>Ubah camera zoom dari <code>3</code> menjadi <code>1.2</code> dan preview. Kamu melihat dunia game yang lebih luas, tapi karakter terlihat kecil — seperti kamera mundur. Ubah lagi ke <code>5</code>. <strong>Tulis LOG 1 baris</strong>: zoom berapa yang paling enak dimainkan?</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════════════════════ MODULE 5 ══════════════════════════ -->
+  <section class="course-module" id="module-5">
+    <header class="page-header">
+      <span class="page-number">05</span>
+      <h1 class="page-title">Tombol Ajaib</h1>
+      <p class="page-subtitle">Buat karakter mendengar tombol → lari ke kanan/kiri + memainkan animasi, dan perbaiki flip (menghadap arah gerak).</p>
+    </header>
+
+    <section class="screen screen-opener">
+      <h2 class="screen-heading">Mengapa karakter perlu "mendengar" tombol?</h2>
+      <p><span class="mascot">📺</span>Bayangkan remote TV. Tombol di remote tidak berguna kalau TV tidak "mendengarkan". Di game, tombol keyboard butuh <em>telinga</em> — dan telinga itu adalah <strong>Events</strong>. Video mengajarkan: <em>"kalau kita tekan tombol kanan, player harus bergerak ke kanan dan memainkan animasi run."</em></p>
+      <p>Ini pelajaran paling seru: kamu akan menyusun perintah "jika ✚ ditekan → gerak + ganti animasi" untuk pertama kalinya.</p>
+    </section>
+
+    <div class="diataxis-tabs">
+      <button class="diataxis-tab active" data-panel="panel-tutorial"><span class="tab-icon">&#x1F393;</span> Tutorial</button>
+      <button class="diataxis-tab" data-panel="panel-howto"><span class="tab-icon">&#x1F527;</span> How-to</button>
+      <button class="diataxis-tab" data-panel="panel-explanation"><span class="tab-icon">&#x1F4A1;</span> Explanation</button>
+      <button class="diataxis-tab" data-panel="panel-reference"><span class="tab-icon">&#x1F4CB;</span> Reference</button>
+    </div>
+
+    <div id="panel-tutorial" class="diataxis-panel active">
+      <div class="hand-on" id="ho-m5">
+        <div class="hand-on-header">
+          <span class="ha-icon">&#x1F4DD;</span>
+          <span class="ha-title">Ritual: Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</span>
+          <span class="ha-progress">0 / 6 selesai</span>
+        </div>
+        <div class="hand-on-progress-bar" style="width:0%"></div>
+        <div class="hand-on-body">
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Event: Tombol kanan ditekan → gerak kanan + animasi run</h4>
+            <p style="font-size:var(--text-sm)">Cari kondisi Keyboard → key "Right". Lalu aksi gerak player.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Preview — karakter lari ke kanan</h4>
+            <p style="font-size:var(--text-sm)">Coba juga tekan kiri: tidak terjadi apa-apa (itu wajar, kita belum bikin).</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Duplikat event untuk tombol kiri</h4>
+            <p style="font-size:var(--text-sm)">Copy → Paste → ubah key ke Left.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tambah flip horizontal untuk arah kiri</h4>
+            <p style="font-size:var(--text-sm)">Supaya karakter menghadap kiri saat lari ke kiri.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Perbaiki flip saat kembali ke kanan</h4>
+            <p style="font-size:var(--text-sm)">Video: tambahkan aksi flip "No" pada event kanan.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Preview dua arah</h4>
+            <p style="font-size:var(--text-sm)">Kiri &amp; kanan halus, karakter menghadap arah lari.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 1 — tombol kanan (video 07:19)</div>
+        <h3>Buat event "tombol kanan → gerak + animasi run"</h3>
+        <p>Video: <em>"kita buat event: jika tekan tombol kanan, player bergerak ke kanan dan memainkan animasi run."</em> Klik kondisi <strong>Keyboard → Key pressed → Right</strong>, lalu aksi gerakkan player ke kanan (Platformer Character -> Gaya → Set speed, atau objek → geser) dan <strong>set animasi → run</strong>.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m5_right_event.jpg" data-clip="../original_gdev_assets/clips/m5_right_event.mp4" alt="Event tombol kanan ditekan" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">21</span>Kondisi: tombol <em>Right</em> ditekan + aksi animasi <em>run</em>.</figcaption>
+        </div>
+        <div class="figure">
+          <img src="../original_gdev_assets/m5_player_runs.jpg" data-clip="../original_gdev_assets/clips/m5_player_runs.mp4" alt="Preview karakter lari ke kanan" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">22</span>Preview: karakter lari ke kanan!</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 2 — masalah kecil (video 08:04)</div>
+        <h3>Perhatikan: kiri tidak jalan, dan saat berhenti masih lari</h3>
+        <p>Video menunjukkan dua masalah: saat tekan <em>kiri</em> tidak terjadi apa-apa, dan saat berhenti tekan tombol, karakter masih memainkan animasi run. Ini wajar karena kita baru bikin event kanan. Kita perbaiki di langkah berikut.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 3 — duplikat untuk kiri (video 08:11)</div>
+        <h3>Copy–paste, ubah ke tombol kiri</h3>
+        <p>Video: <em>"kamu bisa duplikat event — klik copy, lalu paste, ubah key-nya menjadi Left."</em> Sekarang karakter bisa lari ke kiri juga.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m5_left_event.jpg" data-clip="../original_gdev_assets/clips/m5_left_event.mp4" alt="Event tombol kiri hasil duplikasi" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">23</span>Event kiri — duplikat dari event kanan, key diubah ke <em>Left</em>.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 4 — flip agar menghadap (video 08:26)</div>
+        <h3>Balik gambar saat lari ke kiri</h3>
+        <p>Video: <em>"kita akan flip animasi atau objek supaya menghadap ke kiri."</em> Tambahkan aksi <strong>Flip horizontally</strong> (Ya) pada event kiri.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m5_flip.jpg" data-clip="../original_gdev_assets/clips/m5_flip.mp4" alt="Aksi flip horizontal pada event kiri" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">24</span>Agar menghadap kiri, aktifkan <em>flip horizontal</em>.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 5 — perbaiki saat balik (video 08:47)</div>
+        <h3>Atur "No" flip pada event kanan</h3>
+        <p>Video menemukan masalah: setelah lari ke kiri, saat balik ke kanan karakter tidak membalik lagi. Solusinya: salin aksi flip ke event kanan dan ubah menjadi <strong>No</strong> (tidak dibalik). Video: <em>"kita bisa perbaiki dengan menyalin statement ini dan mengubahnya menjadi no."</em></p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 6 — preview dua arah (video 09:00)</div>
+        <h3>Mainkan: lari kiri–kanan</h3>
+        <p>Tekan ▶ dan gerakkan ke dua arah. Karakter sekarang menghadap ke arah larinya! </p>
+        <div class="expected-result"><strong>Sudah bisa?</strong> Panah kiri/kanan menggerakkan karakter, animasi run menyala, dan karakter menghadap arah gerak. Sisa yang kita perbaiki: animasi idle saat diam (Module 6).</div>
+      </div>
+    </div>
+
+    <div id="panel-howto" class="diataxis-panel">
+      <div class="howto-recipe"><h3>Resep: kontrol keyboard</h3>
+        <ol class="howto-list">
+          <li>Tab Events → + → kondisi <strong>Keyboard → Key pressed → Right</strong>.</li>
+          <li>Aksi: gerak player ke kanan + animasi <code>run</code>.</li>
+          <li>Copy row → paste → ubah key <code>Left</code>.</li>
+          <li>Event kiri: tambah aksi <strong>Flip horizontally</strong> → Ya.</li>
+          <li>Event kanan: tambah aksi <strong>Flip horizontally</strong> → No.</li>
+          <li>Preview ▶.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="panel-explanation" class="diataxis-panel">
+      <h2>Mengapa ini bekerja</h2>
+      <p>Setiap <strong>event</strong> = "kondisi → aksi". Kondisi <em>Keyboard right pressed</em> "mendengar" tombol; aksi menyuruh objek bergerak dan ganti animasi. <strong>Flip</strong> memantulkan gambar kiri-kanan supaya karakter menghadap arahnya.</p>
+      <p>Masalah "belum flip saat balik" muncul karena event kiri mem-flip, tapi tidak ada yang mem-flip kembali. Solusi video: eksplisit set flip=No saat tombol kanan — contoh klasik menyelesaikan bug dengan satu aksi kecil.</p>
+    </div>
+
+    <div id="panel-reference" class="diataxis-panel">
+      <h2>Referensi cepat</h2>
+      <table class="ref-table">
+        <tr><th>Istilah</th><th>Artinya</th></tr>
+        <tr><td><code>Event</code></td><td>Perintah "jika … → maka …"</td></tr>
+        <tr><td><code>Condition / Kondisi</code></td><td>"Jika tombol kanan ditekan"</td></tr>
+        <tr><td><code>Action / Aksi</code></td><td>"Gerakkan player + animasi run"</td></tr>
+        <tr><td><code>Duplicate / Copy-Paste</code></td><td>Menyalin event untuk diubah sedikit</td></tr>
+        <tr><td><code>Flip horizontally</code></td><td>Memantulkan gambar kiri-kanan</td></tr>
+      </table>
+    </div>
+
+    <section class="screen screen-exam">
+      <h2 class="screen-heading">Ujian akhir — Module 5</h2>
+      <p>Karakter menuruti perintah tombol. Uji pemahaman event.</p>
+      <div class="quiz-container" id="quiz-m5">
+        <div class="quiz-question-block" data-correct="c"
+             data-explanation-right="Betul! Event = kondisi + aksi. Kondisi 'tombol ditekan' menentukan kapan aksi 'gerakkan karakter' terjadi."
+             data-explanation-wrong="Belum. Event GDevelop itu gabungan dua bagian: kondisi (jika…) dan aksi (maka…).">
+          <h4 class="quiz-question">1. Sebuah event di GDevelop terdiri dari…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Hanya gambar karakter</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Hanya suara</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Kondisi (jika…) + aksi (maka…)</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-question-block" data-correct="a"
+             data-explanation-right="Tepat! Flip horizontal membuat gambar dicermin, sehingga karakter menghadap kiri saat lari ke kiri."
+             data-explanation-wrong="Belum. Flip horizontal = mencerminkan gambar, dipakai supaya karakter menghadap ke arah gerak (kiri).">
+          <h4 class="quiz-question">2. "Flip horizontally" pada event kiri berguna untuk…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Membuat karakter menghadap ke kiri</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Mengubah warna karakter</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Menghentikan game</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary quiz-check-btn">Periksa</button>
+          <button class="btn btn-ghost quiz-reset-btn">Ulangi</button>
+        </div>
+      </div>
+      <div class="callout callout-accent"><span class="callout-icon">&#x1F4DD;</span><div class="callout-content">
+        <span class="callout-title">Misi mini — asisten sutradara</span>
+        <p>Balik ke awal: kita sudah membuat event kanan &amp; kiri. Coba tambahkan event <strong>tombol Spasi → lompat</strong> (aksi: Platformer Character → Set jump). Ini belum diajarkan, tapi coba sendiri — penyelidikan itu bagian dari jadi pembuat game! <strong>Tulis LOG 1 baris</strong> hasilnya.</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════════════════════ MODULE 6 ══════════════════════════ -->
+  <section class="course-module" id="module-6">
+    <header class="page-header">
+      <span class="page-number">06</span>
+      <h1 class="page-title">Rapi, Pas &amp; Cantik</h1>
+      <p class="page-subtitle">Perbaiki lompatan, hilangkan efek "melayang", kembalikan animasi idle, lalu hias dengan latar belakang.</p>
+    </header>
+
+    <section class="screen screen-opener">
+      <h2 class="screen-heading">Mengapa game perlu "dibereskan" &amp; dihias?</h2>
+      <p><span class="mascot">🛏️</span>Kamu sudah bisa bermain — tapi ada yang kurang pas: lompatan terlalu tinggi, karakter terlihat melayang saat lari, dan diam pun masih "berlari". Ini seperti kamar tidur yang baru kamu bersihkan tapi belum dirapikan. Video di penutupnya merapikan semua: <em>"kita perbaiki lompatan, lekas, dan tambahkan background supaya game terlihat lebih bagus."</em></p>
+      <p>Bagian terakhir ini mengajarkan <strong>penyempurnaan</strong>: ubah nilai, perbaiki bug kecil, dan hias dunia game-mu.</p>
+    </section>
+
+    <div class="diataxis-tabs">
+      <button class="diataxis-tab active" data-panel="panel-tutorial"><span class="tab-icon">&#x1F393;</span> Tutorial</button>
+      <button class="diataxis-tab" data-panel="panel-howto"><span class="tab-icon">&#x1F527;</span> How-to</button>
+      <button class="diataxis-tab" data-panel="panel-explanation"><span class="tab-icon">&#x1F4A1;</span> Explanation</button>
+      <button class="diataxis-tab" data-panel="panel-reference"><span class="tab-icon">&#x1F4CB;</span> Reference</button>
+    </div>
+
+    <div id="panel-tutorial" class="diataxis-panel active">
+      <div class="hand-on" id="ho-m6">
+        <div class="hand-on-header">
+          <span class="ha-icon">&#x1F4DD;</span>
+          <span class="ha-title">Ritual: Baca &#8594; Coba &#8594; Jalankan &#8594; Tulis LOG</span>
+          <span class="ha-progress">0 / 7 selesai</span>
+        </div>
+        <div class="hand-on-progress-bar" style="width:0%"></div>
+        <div class="hand-on-body">
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Perbaiki lompatan: falling speed &amp; sustain 0.1</h4>
+            <p style="font-size:var(--text-sm)">Behavior Platformer Character → turunkan falling speed, set sustain time 0.1.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Hilangkan "melayang": Custom Collision Mask</h4>
+            <p style="font-size:var(--text-sm)">Ubah collision mask agar kaki menyentuh tanah pas.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Kembali ke idle saat diam (invert kondisi)</h4>
+            <p style="font-size:var(--text-sm)">Event: jika player sedang tidak bergerak → animasi idle.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Tambah latar belakang "BG" (tile)</h4>
+            <p style="font-size:var(--text-sm)">Objek tiled + gambar background; taruh di belakang (layer base, Z-order 0).</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Perbesar BG &amp; atur Z order</h4>
+            <p style="font-size:var(--text-sm)">Supaya menutup layar dan tidak menutupi karakter.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Hias: tambah batu/rumput di tanah</h4>
+            <p style="font-size:var(--text-sm)">Objek tiled kecil di bawah karakter, supaya tanah tidak kosong.</p></div>
+          </div>
+          <div class="hand-on-step">
+            <span class="hand-on-check">&#10003;</span>
+            <div class="hand-on-content"><h4>Preview final &amp; rayakan!</h4>
+            <p style="font-size:var(--text-sm)">Game platformer sederhanamu selesai!</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 1 — lompatan pas (video 09:08)</div>
+        <h3>Turunkan kekuatan lompat</h3>
+        <p>Video: <em>"jump strength-nya agak terlalu tinggi, kita akan memperbaikinya."</em> Di behavior <strong>Platformer Character</strong>, turunkan <strong>falling speed</strong> dan set <strong>sustain time</strong> = <code>0.1</code>, lalu Apply.</p>
+        <p>Hasilnya lompatan jadi wajar — tidak seperti roket.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m6_jump_setting.jpg" data-clip="../original_gdev_assets/clips/m6_jump_setting.mp4" alt="Lompatan setelah diatur falling speed dan sustain time" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">25</span>Setelah diatur: lompatan pendek dan enak dilihat.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 2 — efek melayang (video 09:46)</div>
+        <h3>Perbaiki karakter "melayang": Custom Collision Mask</h3>
+        <p>Video menemukan: saat lari, karakter tampak <em>melayang</em> sedikit di atas tanah. Penjelasan video: bentuk tabrakan (collision mask) karakter lebih besar dari gambar, sehingga "mengambang".</p>
+        <p>Solusi: klik dua kali objek → <strong>Edit Collision Mask</strong> → gunakan <strong>Custom Collision Mask</strong>, samakan dengan bentuk gambar (misal lebih ramping), supaya kaki pas menyentuh tanah.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m6_collision_mask.jpg" data-clip="../original_gdev_assets/clips/m6_collision_mask.mp4" alt="Custom Collision Mask pada player" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">26</span>Edit <em>collision mask</em> agar kaki karakter menyentuh tanah dengan pas.</figcaption>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">&#x2139;&#xFE0F;</span><div class="callout-content">
+          <span class="callout-title">Istilah</span>
+          <p><span class="term" data-def="Daerah tabrakan sebuah objek — menentukan sejauh mana objek 'menabrak' benda lain.">Collision mask</span> adalah "kulit tabrakan" objek. Kalau lebih besar dari gambarnya, karakter terlihat mengambang/tersangkut.</p></div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 3 — kembali idle (video 10:17)</div>
+        <h3>Saat diam, hentikan animasi run</h3>
+        <p>Video: <em>"kalau player tidak sedang bergerak, kembalikan animasi ke idle."</em> Caranya: buat event dengan kondisi <strong>"player tidak bergerak"</strong> — di GDevelop kita bisa <strong>invert</strong> (membalik) kondisi "player sedang bergerak". Lalu aksi: <strong>Set animation → idle</strong>.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m6_idle_event.jpg" data-clip="../original_gdev_assets/clips/m6_idle_event.mp4" alt="Event kondisi player tidak bergerak → animasi idle" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">27</span>Kondisi dibalik (invert): "jika TIDAK bergerak → set animasi idle".</figcaption>
+        </div>
+        <div class="translate-block" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.09);margin:1.5rem 0">
+          <div style="background:#1E1E2E;color:#CDD6F4;padding:1.25rem;font-family:var(--font-mono);font-size:0.85rem;line-height:1.7">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.5;margin-bottom:0.75rem">✓ Event (blok GDevelop)</div>
+            <div class="code-line"><span class="code-keyword">JIKA</span> player <span class="code-string">tidak</span> bergerak</div>
+            <div class="code-line">   <span class="code-comment">(kondisi "sedang bergerak" + tombol invert)</span></div>
+            <div class="code-line"><span class="code-keyword">MAKA</span> animasi = <span class="code-string">"idle"</span></div>
+          </div>
+          <div style="background:#FFFBF5;padding:1.25rem;font-size:0.875rem;line-height:1.7;border-left:3px solid #7C3AED">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.5;margin-bottom:0.75rem">PLAIN — apa artinya (cara video)</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Diam = tidak menekan tombol gerak</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Balik kondisi "sedang bergerak"</div>
+            <div class="tl" style="margin-bottom:0.75rem;padding-left:0.75rem;border-left:2px solid #E9DFD1">Kembali ke posisi berdiri</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 4 — latar belakang (video 11:32)</div>
+        <h3>Tambah background "BG"</h3>
+        <p>Video: <em>"mari tambahkan background supaya game terlihat lebih bagus."</em> Buat objek <strong>tiled Sprite</strong> baru, beri nama <code>BG</code>, ambil gambar background dari Asset Store. Klik <strong>Apply</strong>.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m6_background.jpg" data-clip="../original_gdev_assets/clips/m6_background.mp4" alt="Objek BG dengan gambar background dari asset store" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">28</span>Objek <code>BG</code> diisi gambar latar dari Asset Store.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 5 — letakkan BG di belakang (video 11:50)</div>
+        <h3>Kirim background ke belakang</h3>
+        <p>Video: <em>"letakkan di base layer, ubah Z order ke 0 supaya pindah ke belakang."</em> Atur Z-order (urutan tumpuk) BG = <code>0</code> sehingga karakter dan tanah tetap terlihat di depan.</p>
+        <p>Kamu juga bisa perbesar BG supaya menutup seluruh layar.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 6 — hias tanah (video 12:40)</div>
+        <h3>Tambahkan batu/rumput biar tidak kosong</h3>
+        <p>Video: <em>"tanahnya terlihat agak kosong, jadi mari tambahkan bebatuan."</em> Buat objek tiled kecil (misal <code>soil</code>), ambil gambar batu/rumput dari Asset Store, resize, lalu letakkan di sepanjang tanah.</p>
+        <div class="figure">
+          <img src="../original_gdev_assets/m6_rocks.jpg" data-clip="../original_gdev_assets/clips/m6_rocks.mp4" alt="Game final dengan batu di tanah dan background" loading="lazy" width="1280" height="720">
+          <figcaption><span class="fig-num">29</span>Game final — karakter lari, tanah, lompatan pas, dan hiasan batu.</figcaption>
+        </div>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="tutorial-step-number">Langkah 7 — preview final (video 13:00)</div>
+        <h3>Mainkan &amp; rayakan!</h3>
+        <p>Tekan ▶. Karakter lari di dunia yang sekarang punya latar belakang, tanah, lompatan pas, dan animasi idle. <em>"Mudah sekali, kan?"</em> — kata video. Kamu baru saja membuat game pertamamu!</p>
+        <div class="expected-result"><strong>Logbook kamu penuh?</strong> Kamu sudah menyelesaikan 6 modul + LOG tiap pelajaran. Ini karya nyata: game platformer versimu sendiri.</div>
+      </div>
+    </div>
+
+    <div id="panel-howto" class="diataxis-panel">
+      <div class="howto-recipe"><h3>Resep: polesan akhir</h3>
+        <ol class="howto-list">
+          <li>Behavior Platformer Character: falling speed ↓, sustain 0.1.</li>
+          <li>Edit Collision Mask → Custom, sesuaikan bentuk.</li>
+          <li>Event: kondisi "tidak bergerak" → animasi idle (invert).</li>
+          <li>Objek tiled <code>BG</code> + gambar background, Z-order 0.</li>
+          <li>Objek tiled kecil (batu/rumput) di tanah.</li>
+          <li>Preview ▶ dan mainkan!</li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="panel-explanation" class="diataxis-panel">
+      <h2>Mengapa penyempurnaan itu penting</h2>
+      <p>Game yang "bisa dimainkan" dan game yang "enak dimainkan" itu beda. Tiga penyelarasan ini — <em>lompatan, collision mask, animasi diam</em> — membuat game terasa <strong>adil dan nyaman</strong>. Video menutup dengan pesan: <em>"begitu saja — begini cara kamu membuat game dasar sangat simpel hanya dengan GDevelop."</em></p>
+      <p>Collision mask yang lebih kecil dari gambar menyelesaikan "melayang"; invert kondisi mengubah "sedang bergerak" menjadi "tidak bergerak" dengan sekali klik — dua trik yang sering dipakai pembuat game.</p>
+    </div>
+
+    <div id="panel-reference" class="diataxis-panel">
+      <h2>Referensi cepat</h2>
+      <table class="ref-table">
+        <tr><th>Istilah</th><th>Artinya</th></tr>
+        <tr><td><code>Falling speed</code></td><td>Kecepatan jatuh setelah lompat</td></tr>
+        <tr><td><code>Sustain time</code></td><td>Berapa lama lompatan "ditahan"</td></tr>
+        <tr><td><code>Collision mask</code></td><td>Kulit tabrakan objek</td></tr>
+        <tr><td><code>Invert condition</code></td><td>Membalik kondisi (bergerak → tidak bergerak)</td></tr>
+        <tr><td><code>Z order</code></td><td>Urutan tumpuk objek (0 = paling belakang)</td></tr>
+        <tr><td><code>Base layer</code></td><td>Lapisan dasar semua objek</td></tr>
+      </table>
+    </div>
+
+    <section class="screen screen-exam">
+      <h2 class="screen-heading">Ujian akhir — Module 6</h2>
+      <p>Ini ujian pamungkas. Kamu sudah tahu hampir semuanya!</p>
+      <div class="quiz-container" id="quiz-m6">
+        <div class="quiz-question-block" data-correct="a"
+             data-explanation-right="Betul! Invert membalik kondisi: 'sedang bergerak' menjadi 'TIDAK bergerak'. Jadi saat player diam, event menjalankan animasi idle."
+             data-explanation-wrong="Belum. Tombol invert membalik kondisi. 'Sedang bergerak' dibalik menjadi 'tidak bergerak', dipakai untuk animasi diam.">
+          <h4 class="quiz-question">1. Untuk mengembalikan karakter ke animasi idle saat diam, kita memakai tombol…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Invert (membalik) kondisi 'sedang bergerak'</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Hapus semua animasi</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Perbesar kamera</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-question-block" data-correct="c"
+             data-explanation-right="Betul! Collision mask = kulit tabrakan objek. Kalau lebih besar dari gambar, kaki tidak menyentuh tanah dengan pas sehingga terlihat melayang."
+             data-explanation-wrong="Belum. Itu masalah collision mask: daerah tabrakan lebih besar dari gambar, jadi kaki tampak menggantung.">
+          <h4 class="quiz-question">2. Karakter terlihat 'melayang' saat lari karena…</h4>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="a"><div class="quiz-option-radio"></div><span>Warna latar terlalu terang</span></button>
+            <button class="quiz-option" data-value="b"><div class="quiz-option-radio"></div><span>Gravitasi mati</span></button>
+            <button class="quiz-option" data-value="c"><div class="quiz-option-radio"></div><span>Collision mask lebih besar dari gambar karakter</span></button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary quiz-check-btn">Periksa</button>
+          <button class="btn btn-ghost quiz-reset-btn">Ulangi</button>
+        </div>
+      </div>
+      <div class="callout callout-accent"><span class="callout-icon">&#x1F4DD;</span><div class="callout-content">
+        <span class="callout-title">Tantangan kreatif — bisa lebih!</span>
+        <p>Berani melangkah lebih jauh? Coba salah satu: (a) ubah background jadi malam hari, (b) tambah tombol <em>Spasi</em> untuk lompat (kalau belum), atau (c) tambahkan suara langkah simple. Tulis <strong>LOG 1 baris</strong>: apa yang kamu coba dan hasilnya.</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ===== PAGER AKHIR ===== -->
+  <div class="pager course-pager">
+    <a href="index.html" style="flex:none"><span class="pager-label">&#8592; Kembali</span><span class="pager-title">Home</span></a>
+    <a href="index.html" style="text-align:right"><span class="pager-label">Selamat! &#127881; Selesai</span><span class="pager-title">Kembali ke Home</span></a>
+  </div>
+
+</main>
+
+<script src="shared.js"></script>
+</body>
+</html>
